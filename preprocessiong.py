@@ -50,6 +50,10 @@ test['New_Sentence'] = test['New_Sentence'].apply(lambda x: re.sub(r'\\', '', x)
 train['New_Sentence'] = train['New_Sentence'].apply(lambda x: re.sub(r"b'", '', x))
 test['New_Sentence'] = test['New_Sentence'].apply(lambda x: re.sub(r"b'", '', x))
 
+# remove _ 
+train['New_Sentence'] = train['New_Sentence'].apply(lambda x: re.sub(r'_', '', x))
+test['New_Sentence'] = test['New_Sentence'].apply(lambda x: re.sub(r'_', '', x))
+
 # remove multiple spaces
 train['New_Sentence'] = train['New_Sentence'].apply(lambda x: re.sub(r'\s+', ' ', x))
 test['New_Sentence'] = test['New_Sentence'].apply(lambda x: re.sub(r'\s+', ' ', x))
