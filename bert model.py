@@ -51,7 +51,5 @@ for i in tqdm(range(len(test))):
     pred.append(make_prediction(test['New_Sentence'][i]))
 
 # create submission file
-submission = pd.read_csv('sample_submission.csv')
-submission['Sentence_id'] = Sentence_id
-submission['Type'] = pred
+submission = pd.DataFrame({'Sentence_id': Sentence_id, 'Type': pred})
 submission.to_csv('submission.csv', index=False)
